@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "PadhaiPal",
+			"path": "."
+		},
+		{
+			"path": "../frontend"
+		}
+	],
+	"settings": {}
+}
