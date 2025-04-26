@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import './Login.css';
 import { Link } from 'react-router-dom';
 
-
-
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -11,9 +9,10 @@ const Login = () => {
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     let validationErrors = {};
+
     if (!email) validationErrors.email = 'Email is required';
     if (!password) validationErrors.password = 'Password is required';
 
@@ -22,27 +21,20 @@ const Login = () => {
       return;
     }
 
-    try {
-      const response = await fetch('http://localhost:5000/api/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password, rememberMe }),
-      });
+    // Simulate successful login (Frontend-only)
+    alert('Login successful!');
+    console.log({
+      email,
+      password,
+      rememberMe,
+    });
 
-      const data = await response.json();
-      if (response.ok) {
-        alert('Login successful!');
-        setEmail('');
-        setPassword('');
-        setRememberMe(false); // Optionally reset the "Remember Me" checkbox
-        console.log(data);
-      } else {
-        alert(data.message || 'Login failed. Please check your credentials.');
-      }
-    } catch (error) {
-      alert('Server error, try again later.');
-      console.error('Error:', error);
-    }
+    // Optionally clear the form
+    setEmail('');
+    setPassword('');
+    setRememberMe(false);
+    setErrors({});
+    setShowPassword(false);
   };
 
   const handleInputChange = (e) => {
@@ -86,7 +78,7 @@ const Login = () => {
             <label>Password</label>
             <div className="password-container">
               <input
-                type={showPassword ? 'text' : 'password'}  // Toggle input type based on showPassword state
+                type={showPassword ? 'text' : 'password'}
                 name="password"
                 value={password}
                 onChange={handleInputChange}
@@ -95,7 +87,7 @@ const Login = () => {
               <button
                 type="button"
                 className="show-password-btn"
-                onClick={() => setShowPassword(!showPassword)}  // Toggle password visibility
+                onClick={() => setShowPassword(!showPassword)}
               >
                 {showPassword ? 'Hide' : 'Show'}
               </button>
@@ -118,8 +110,7 @@ const Login = () => {
           <button type="submit" className="login-button">Login</button>
           <p className="signup-link">
             Don't have an account? <Link to="/signup">Signup</Link>
-         </p>
-
+          </p>
         </form>
       </div>
     </div>
