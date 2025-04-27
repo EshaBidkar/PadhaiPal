@@ -10,19 +10,35 @@ export default function App() {
   const [submitted, setSubmitted] = useState(false);
   const [flashcards, setFlashcards] = useState([]);
   const [quizQuestions, setQuizQuestions] = useState([]);
+  const [topic, setTopic] = useState("general");
 
   useEffect(() => {
-    const fetchFlashcards = async () => {
-      const flashData = await Promise.resolve([
+    fetchFlashcards(topic);
+    fetchQuizQuestions(topic);
+  }, [topic]);
+
+  const fetchFlashcards = async (selectedTopic) => {
+    let flashData = [];
+    if (selectedTopic === "general") {
+      flashData = await Promise.resolve([
         { question: "What is the capital of France?", answer: "Paris" },
         { question: "What is 2 + 2?", answer: "4" },
         { question: "React is a ____?", answer: "JavaScript library" },
       ]);
-      setFlashcards(flashData);
-    };
+    } else if (selectedTopic === "software") {
+      flashData = await Promise.resolve([
+        { question: "What does SDLC stand for?", answer: "Software Development Life Cycle" },
+        { question: "Name one Agile framework.", answer: "Scrum" },
+        { question: "Who is known as the father of software engineering?", answer: "Watts Humphrey" },
+      ]);
+    }
+    setFlashcards(flashData);
+  };
 
-    const fetchQuizQuestions = async () => {
-      const quizData = await Promise.resolve([
+  const fetchQuizQuestions = async (selectedTopic) => {
+    let quizData = [];
+    if (selectedTopic === "general") {
+      quizData = await Promise.resolve([
         {
           question: "What is the largest planet?",
           options: ["Earth", "Mars", "Jupiter", "Saturn"],
@@ -34,12 +50,22 @@ export default function App() {
           answer: "100°C",
         },
       ]);
-      setQuizQuestions(quizData);
-    };
-
-    fetchFlashcards();
-    fetchQuizQuestions();
-  }, []);
+    } else if (selectedTopic === "software") {
+      quizData = await Promise.resolve([
+        {
+          question: "Which model is known as the classic software development model?",
+          options: ["Agile", "Waterfall", "V-Model", "Spiral"],
+          answer: "Waterfall",
+        },
+        {
+          question: "Which of these is NOT a phase of SDLC?",
+          options: ["Requirement Analysis", "Design", "Deployment", "Shopping"],
+          answer: "Shopping",
+        },
+      ]);
+    }
+    setQuizQuestions(quizData);
+  };
 
   const handleFlip = (index) => {
     setFlipped(flipped === index ? null : index);
@@ -79,9 +105,6 @@ export default function App() {
         </div>
       </nav>
 
-       
-
-
       <div
         className="login-container"
         style={{
@@ -92,6 +115,26 @@ export default function App() {
           minHeight: '100vh',
         }}
       >
+
+        {/* Move Topic Select dropdown here, below the buttons */}
+        <div className="topic-container">
+          <label htmlFor="topic-select" className="topic-label">Select Topic:</label>
+          <select
+            id="topic-select"
+            onChange={(e) => {
+              setTopic(e.target.value);
+              setQuizIndex(0);
+              setScore(0);
+              setFlipped(null);
+            }}
+            value={topic}
+            className="topic-select"
+          >
+            <option value="general">General Knowledge</option>
+            <option value="software">Software Engineering</option>
+          </select>
+        </div>
+
         {view === "flashcards" && (
           <div className="flashcards-container">
             {flashcards.map((card, index) => (

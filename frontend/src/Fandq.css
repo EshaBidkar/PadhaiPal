@@ -99,6 +99,32 @@ body, .app {
     color: #0a192f;
     transform: scale(1.05);
   }
+  .topic-container {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .topic-label {
+    font-size: 18px;
+    margin-right: 10px;
+    color: white;
+  }
+  
+  .topic-select {
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: #003366; /* Dark Blue */
+    color: white;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .topic-select option {
+    background-color: white;
+    color: black;
+  }
   
   
 /* Flashcards Styles */
