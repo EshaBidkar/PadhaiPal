@@ -90,21 +90,23 @@ export default function App() {
 
   return (
     <div className="app">
+      {/* Only one Navbar */}
       <nav className="navbar">
         <div className="navbar-left">
-          <a href="/" className="nav-link">Home</a>
-        </div>
-
-        <div className="navbar-center">
-          <button onClick={() => setView("flashcards")}>Flashcards</button>
-          <button onClick={() => setView("quizzes")}>Quizzes</button>
+          <span className="brand">PadhaiPal</span>
         </div>
 
         <div className="navbar-right">
+          <a href="/" className="nav-link">Home</a>
+          <a href="/todo" className="nav-link">To-Do List</a>
+          <a href="/lectures" className="nav-link">Lectures</a>
+          <button onClick={() => setView("flashcards")} className="nav-button">Flashcards</button>
+          <button onClick={() => setView("quizzes")} className="nav-button">Quizzes</button>
           <button className="profile-button">Profile</button>
         </div>
       </nav>
 
+      {/* Background Section */}
       <div
         className="login-container"
         style={{
@@ -115,8 +117,7 @@ export default function App() {
           minHeight: '100vh',
         }}
       >
-
-        {/* Move Topic Select dropdown here, below the buttons */}
+        {/* Topic selection box */}
         <div className="topic-container">
           <label htmlFor="topic-select" className="topic-label">Select Topic:</label>
           <select
@@ -135,6 +136,7 @@ export default function App() {
           </select>
         </div>
 
+        {/* Flashcards View */}
         {view === "flashcards" && (
           <div className="flashcards-container">
             {flashcards.map((card, index) => (
@@ -150,6 +152,7 @@ export default function App() {
           </div>
         )}
 
+        {/* Quizzes View */}
         {view === "quizzes" && (
           <div className="quiz-container">
             {quizIndex < quizQuestions.length ? (
