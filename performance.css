@@ -1,0 +1,138 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0a192f;
+    color: #ccd6f6;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    background-color: #112240;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar h1 {
+    color: #ffffff;
+    font-size: 1.75rem;
+    font-weight: 600;
+  }
+  
+  .navbar-center {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  .nav-link:hover {
+    background-color: #3b82f6;
+    color: #0a192f;
+  }
+  
+  .profile-button {
+    background-color: #3b82f6;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .profile-button:hover {
+    background-color: #60a5fa;
+  }
+  
+  /* Performance Section */
+  .performance-section {
+    padding: 2rem;
+  }
+  
+  .performance-title {
+    text-align: center;
+    font-size: 2.5rem; /* Adjust font size if necessary */
+    color: #ffffff;
+    margin-bottom: 2rem; /* Space between title and greeting */
+  }
+  
+  .performance-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 2rem;
+    background-color: rgba(10, 25, 47, 0.85);
+    padding: 2rem;
+    border-radius: 12px;
+  }
+  
+  .scores {
+    font-size: 1.1rem;
+    line-height: 2;
+  }
+  
+  .chart {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .swot-analysis {
+    margin-top: 3rem;
+  }
+  
+  .swot-analysis h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  
+  .swot-analysis table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #112240;
+    color: #ccd6f6;
+  }
+  
+  .swot-analysis th,
+  .swot-analysis td {
+    padding: 0.75rem;
+    border: 1px solid #3b82f6;
+    text-align: left;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar-center {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .performance-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .chart {
+      max-width: 300px;
+      width: 100%;
+    }
+  }
+  

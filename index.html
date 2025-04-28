@@ -1,65 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PadhaiPal | Video Lectures</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="page-container">
-    <!-- Navbar -->
-    <nav class="navbar">
-      <h1 class="logo">PadhaiPal</h1>
-      <div class="navbar-center">
-        <a href="#" class="nav-link">Home</a>
-        <a href="#" class="nav-link">To-Do List</a>
-        <a href="#" class="nav-link">Quizzes</a>
-        <a href="#" class="nav-link">Lectures</a>
-        <button class="profile-button">Profile</button>
-      </div>
-    </nav>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
 
-    <!-- Hero -->
-    <header class="hero">
-      <div class="hero-content">
-        <h1>Master Your Studies with 🎯</h1>
-        <h2>Curated YouTube Lectures</h2>
-        <p>Find the perfect lecture for your grade and subject!</p>
-        <a href="#lecture-sections" class="hero-button">Start Exploring</a>
-      </div>
-    </header>
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
-    <!-- Filters -->
-    <main class="content">
-      <section class="filters">
-        <select id="grade-filter">
-          <option value="all">All Grades</option>
-          <option value="Grade 10">Grade 10</option>
-          <option value="Grade 11">Grade 11</option>
-          <option value="Grade 12">Grade 12</option>
-          <option value="Bachelors">Bachelors</option>
-          <option value="Masters">Masters</option>
-        </select>
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
 
-        <select id="subject-filter">
-          <option value="all">All Subjects</option>
-          <option value="Mathematics">Mathematics</option>
-          <option value="Physics">Physics</option>
-          <option value="Chemistry">Chemistry</option>
-          <option value="Biology">Biology</option>
-          <option value="Computer Science">Computer Science</option>
-        </select>
-      </section>
-
-      <!-- Lectures -->
-      <section class="lecture-sections" id="lecture-sections">
-        <!-- JS will inject here -->
-      </section>
-    </main>
-x
-  </div>
-
-  <script src="script.js"></script>
-</body>
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
 </html>
