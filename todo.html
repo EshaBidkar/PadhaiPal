@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Study Buddy - To-Do List</title>
+  <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <h1>PadhaiPal - To-Do List</h1>
+      <p>Stay organized, hit deadlines, and boost your study game!</p>
+    </header>
+
+    <main class="main-content">
+      <div class="upload-card">
+        <form id="task-form" class="upload-area">
+          <h3>Add New Task</h3>
+          <input type="text" id="task-title" placeholder="Task Title" required>
+          <textarea id="task-desc" placeholder="Short Description" rows="2" required></textarea>
+          <input type="date" id="task-deadline" required>
+          <button type="submit" class="process-btn">Add Task</button>
+        </form>
+      </div>
+
+      <div id="task-list" class="task-list">
+        <!-- Tasks show here -->
+      </div>
+    </main>
+
+    <footer class="footer">
+      Made with 💙 Stay productive!
+    </footer>
+  </div>
+
+  <script src="todo.js"></script>
+</body>
+</html>
