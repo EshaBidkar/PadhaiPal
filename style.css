@@ -1,0 +1,192 @@
+/* Global */
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('bg.jepg.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ccd6f6;
+}
+
+  /* Navbar */
+  .navbar {
+    background: #112240;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .navbar-center {
+    display: flex;
+    gap: 1.2rem;
+  }
+  
+  .nav-link {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #3b82f6;
+  }
+  
+  .profile-button {
+    background: #3b82f6;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    color: white;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .profile-button:hover {
+    background: #60a5fa;
+  }
+  
+  /* Hero */
+/* Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem;
+    text-align: center;
+    background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('bg.png') center/cover no-repeat;
+    color: #ccd6f6; /* your palette's text color */
+}
+
+
+  .hero-section {
+    background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('bg.png') center/cover no-repeat;
+    /* keeps the bg image but darkens it */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ccd6f6; /* your palette's text color */
+}
+
+  
+  .hero-content h1 {
+    font-size: 2.8rem;
+    margin: 0.5rem 0;
+  }
+  
+  .hero-content h2 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    color: #bfdbfe;
+  }
+  
+  .hero-content p {
+    margin: 1rem 0 2rem;
+    font-size: 1.2rem;
+  }
+  
+  .hero-button {
+    background: #0ea5e9;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+  }
+  
+  .hero-button:hover {
+    background: #38bdf8;
+  }
+  
+  /* Filters */
+  .filters {
+    margin: 3rem 0 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  select {
+    padding: 0.8rem 1.2rem;
+    background: #1e293b;
+    border: 1px solid #3b82f6;
+    border-radius: 8px;
+    color: #e0f2fe;
+    font-size: 1rem;
+  }
+  
+  /* Lecture Cards */
+  .lecture-sections {
+    padding: 2rem 0;
+  }
+  
+  .video-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .video-card {
+    background: rgba(17, 34, 64, 0.8);
+    backdrop-filter: blur(8px);
+    width: 260px;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+  
+  .video-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 6px 30px rgba(96, 165, 250, 0.6);
+  }
+  
+  .video-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .video-card p {
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #e0f2fe;
+  }
+  
+  /* Footer */
+  .footer {
+    background: #112240;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    color: #94a3b8;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 25, 47, 0.8); /* or play with the opacity */
+    z-index: -1;
+}
